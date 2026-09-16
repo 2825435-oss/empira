@@ -1,7 +1,7 @@
 {
   "name": "EMPIRA",
-  "version": "0.1.0",
-  "release_status": "baseline",
+  "version": "0.2.0",
+  "release_status": "test",
   "entrypoint": "install.md",
   "public_entrypoint_planned": "https://raw.githubusercontent.com/2825435-oss/empira/main/install.md",
   "canonical_source_policy": "Owner Notion workspace is the working source during the initial external test; GitHub is the versioned distribution snapshot.",
@@ -15,7 +15,8 @@
     ],
     "notion_schema": "notion/schema.json",
     "system_pages": "notion/system-pages.json",
-    "validation": "notion/validation.json"
+    "validation": "notion/validation.json",
+    "runtime_router": "core/runtime-router.md"
   },
   "components": [
     {
@@ -47,6 +48,12 @@
       "name": "Recall from Memory",
       "version": "1.0.0",
       "path": "skills/recall-from-memory.md"
+    },
+    {
+      "id": "runtime-router",
+      "name": "EMPIRA Runtime Router",
+      "version": "1.0.0",
+      "path": "core/runtime-router.md"
     }
   ]
 }
