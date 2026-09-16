@@ -1,6 +1,22 @@
 # EMPIRA
 
-EMPIRA is a portable, structured long-term memory system for people working with multiple AI agents. Notion stores the user's private Memory; this repository distributes the system rules, schema, reusable workflows, and installation adapters.
+EMPIRA is a portable, structured long-term memory system for people working with multiple AI agents. Notion stores each user's private Memory; this repository distributes the reusable system.
+
+## Universal entry point
+
+The intended user experience is one instruction to any capable AI agent:
+
+> Execute the EMPIRA installer at this URL.
+
+Canonical installer file: [install.md](install.md)
+
+The same installer detects whether it must install, connect, update, or repair EMPIRA. It does not require the user to select ChatGPT, Claude, Codex, or copy separate component prompts.
+
+The public raw URL will become usable after this clean repository is made public:
+
+```text
+https://raw.githubusercontent.com/2825435-oss/empira/main/install.md
+```
 
 ## Release
 
@@ -10,15 +26,7 @@ This is the first formally versioned distribution baseline. It does not attempt 
 
 ## Privacy boundary
 
-This repository contains only reusable system components:
-
-- Memory System Guide;
-- Memory Schema Reference;
-- Prepare, Capture, and Recall workflows;
-- installation and host-adapter instructions;
-- version manifest and changelog.
-
-It must not contain a user's personal Memory records, private workspace exports, credentials, tokens, or connector configuration.
+This repository contains only reusable system components. It must not contain personal Memory records, private workspace exports, credentials, tokens, connector configuration, or installation-specific Notion IDs.
 
 ## Components
 
@@ -30,32 +38,30 @@ It must not contain a user's personal Memory records, private workspace exports,
 | Capture to Memory | 1.0.0 | `skills/capture-to-memory.md` |
 | Recall from Memory | 1.0.0 | `skills/recall-from-memory.md` |
 
-Machine-readable versions are stored in `manifest.json`.
+Machine-readable versions and installation resources are declared in `manifest.json`.
 
 ## Architecture
 
-EMPIRA separates three layers:
+EMPIRA separates:
 
 1. **Specification** — Guide, Schema, principles, and Skills.
-2. **Implementation** — Notion databases, relations, bootstrap/router, and AI integration.
+2. **Implementation** — Notion databases, relations, installer, and AI integration.
 3. **User Data** — private Memory records belonging only to the user.
 
-Only the first two layers are distributable. User Data stays in the user's own Notion workspace.
-
-## Installation status
-
-The reusable core is included in this baseline. The clean-install workflow and host adapters for ChatGPT, Claude, and Codex are being validated before the first external installation.
+Only the first two layers are distributed.
 
 ## Repository structure
 
 ```text
-core/       Canonical operating rules and database schema
-skills/     Reusable Memory workflows
-adapters/   Host-specific bootstrap instructions
-installer/  Clean-install instructions and prompts
-examples/   Fictional examples only
+install.md                 Universal agent entry point
+manifest.json              Release and component versions
+core/                      Canonical operating rules and schema semantics
+skills/                    Prepare, Capture, and Recall workflows
+notion/schema.json         Exact Notion database specification
+notion/system-pages.json   Component-to-Notion installation map
+notion/validation.json     Post-install verification contract
 ```
 
 ## Canonical source during the initial test
 
-During the first external test, the owner's working Notion pages remain the source from which packaged releases are prepared. This repository is the versioned distribution snapshot. A future release may change that policy explicitly.
+During the first external test, the owner's working Notion pages remain the source from which packaged releases are prepared. GitHub is the versioned distribution snapshot. A future release may change that policy explicitly.
