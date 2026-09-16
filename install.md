@@ -5,11 +5,12 @@ This document is an executable installation protocol for an AI agent. Follow it;
 ## Package
 
 - Product: EMPIRA
-- Target release: `0.1.0`
+- Target release: `0.2.0`
 - Manifest: https://raw.githubusercontent.com/2825435-oss/empira/main/manifest.json
 - Notion schema: https://raw.githubusercontent.com/2825435-oss/empira/main/notion/schema.json
 - System pages: https://raw.githubusercontent.com/2825435-oss/empira/main/notion/system-pages.json
 - Validation contract: https://raw.githubusercontent.com/2825435-oss/empira/main/notion/validation.json
+- Runtime router: https://raw.githubusercontent.com/2825435-oss/empira/main/core/runtime-router.md
 
 ## Goal
 
@@ -76,7 +77,7 @@ Select the mode:
 For a new installation:
 
 1. Create a parent page named `EMPIRA System`.
-2. Record release `0.1.0`, installation date, and a clear privacy statement.
+2. Record release `0.2.0`, installation date, and a clear privacy statement.
 3. Create the `Memory` database exactly from `notion/schema.json`.
 4. Create the self-relation `Related` after the Memory data source exists.
 5. Create the `AI Memory Skills` database from `notion/schema.json`.
@@ -111,9 +112,23 @@ If a complete current installation already exists:
 
 ### 7. Host integration
 
-Use native skills, plugins, project instructions, or equivalent host mechanisms only when the current environment exposes a supported installation method.
+Read `core/runtime-router.md`.
 
-Do not require the user to copy separate platform-specific prompts. If persistent host configuration cannot be installed programmatically, EMPIRA must still work in the current session through this installer URL, and the limitation must be stated plainly.
+Use native skills, plugins, project instructions, or equivalent host mechanisms when the current environment exposes a supported installation method.
+
+If the host allows programmatic installation, install the router through that supported mechanism and verify it.
+
+If persistent host configuration cannot be installed programmatically:
+
+1. Keep EMPIRA working in the current session through this installer.
+2. Identify the exact persistent instruction location exposed by the current host, such as Project Instructions, Custom Instructions, a native Skill, or an equivalent setting.
+3. Explain the benefit in no more than three short sentences: the router lets new chats consistently discover the current Guide and the matching Prepare, Capture, or Recall workflow; Notion remains canonical.
+4. Offer the exact canonical block from `core/runtime-router.md` once, ready to paste without editing.
+5. Tell the user whether project-level or global placement is preferable for their stated use.
+6. Ask the user to make only this host-controlled settings change, then offer to validate it.
+7. If no persistent instruction mechanism exists, say that the same installer URL must be provided when connecting a new agent or session.
+
+Do not present this manual step as a failure, and do not ask the user to copy multiple prompts or component files.
 
 ### 8. Validate
 
@@ -136,6 +151,6 @@ Return only a concise installation report:
 - installed EMPIRA version;
 - links to the EMPIRA System page and both databases;
 - component validation result;
-- any unavoidable host limitation.
+- persistent host integration status: installed automatically, manual one-block setup offered, or unavailable;
 
-Do not return a long execution log.
+If manual persistent setup is needed, include the short explanation, exact location, and one copy-ready router block after the installation report. Do not return a long execution log.
