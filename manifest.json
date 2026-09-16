@@ -1,11 +1,17 @@
 {
   "name": "EMPIRA",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "release_status": "test",
   "entrypoint": "install.md",
-  "public_entrypoint_planned": "https://raw.githubusercontent.com/2825435-oss/empira/main/install.md",
+  "public_entrypoint": "https://raw.githubusercontent.com/2825435-oss/empira/main/install.md",
+  "release_ref": "release-0.2.1",
+  "release_base_url": "https://raw.githubusercontent.com/2825435-oss/empira/release-0.2.1/",
   "canonical_source_policy": "Owner Notion workspace is the working source during the initial external test; GitHub is the versioned distribution snapshot.",
   "privacy_boundary": "No personal Memory records, credentials, tokens, private workspace exports, or distributor installation IDs.",
+  "language": {
+    "canonical_content": "uk",
+    "packaging": "en"
+  },
   "installation": {
     "modes": [
       "install",
@@ -14,9 +20,16 @@
       "repair"
     ],
     "notion_schema": "notion/schema.json",
+    "notion_schema_version": "1.0.0",
     "system_pages": "notion/system-pages.json",
+    "system_pages_spec_version": "1.0.0",
     "validation": "notion/validation.json",
+    "validation_version": "1.0.0",
     "runtime_router": "core/runtime-router.md"
+  },
+  "integrity": {
+    "validator": "scripts/validate-package.mjs",
+    "workflow": ".github/workflows/validate.yml"
   },
   "components": [
     {
