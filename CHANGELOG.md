@@ -2,6 +2,30 @@
 
 All notable packaged changes to EMPIRA are documented here.
 
+## 0.2.1 — Distribution integrity hardening
+
+### Added
+
+- One copy-ready message containing the permanent installer URL.
+- Stable release-ref metadata and release-pinned package resource URLs.
+- Explicit Ukrainian canonical-content language declaration.
+- MIT license.
+- Deterministic package validator for paths, component metadata, schema versions, release consistency, and common secret or installation-ID patterns.
+- GitHub Actions validation on pushes and pull requests.
+
+### Changed
+
+- The README now describes the evergreen-entrypoint and stable-release-ref model.
+- The installer resolves all package components from one release ref and rejects mixed revisions.
+- Automated privacy checks are explicitly described as a supplement to semantic review, not a complete guarantee.
+
+### Compatibility
+
+- Memory System Guide remains 1.2.0.
+- Memory Schema Reference remains 1.3.0.
+- Prepare, Capture, Recall, and Runtime Router remain 1.0.0.
+- No Notion schema or user Memory migration is required.
+
 ## 0.2.0 — Universal runtime router and manual host fallback
 
 ### Added
