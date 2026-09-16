@@ -1,0 +1,39 @@
+{
+  "name": "EMPIRA",
+  "version": "0.1.0",
+  "release_status": "baseline",
+  "canonical_source_policy": "Owner Notion workspace is the working source during the initial external test; GitHub is the versioned distribution snapshot.",
+  "privacy_boundary": "No personal Memory records, credentials, tokens, or private workspace exports.",
+  "components": [
+    {
+      "id": "memory-system-guide",
+      "name": "Memory System Guide",
+      "version": "1.2.0",
+      "path": "core/memory-system-guide.md"
+    },
+    {
+      "id": "memory-schema-reference",
+      "name": "Memory Schema Reference",
+      "version": "1.3.0",
+      "path": "core/memory-schema-reference.md"
+    },
+    {
+      "id": "prepare-for-memory",
+      "name": "Prepare for Memory",
+      "version": "1.0.0",
+      "path": "skills/prepare-for-memory.md"
+    },
+    {
+      "id": "capture-to-memory",
+      "name": "Capture to Memory",
+      "version": "1.0.0",
+      "path": "skills/capture-to-memory.md"
+    },
+    {
+      "id": "recall-from-memory",
+      "name": "Recall from Memory",
+      "version": "1.0.0",
+      "path": "skills/recall-from-memory.md"
+    }
+  ]
+}
