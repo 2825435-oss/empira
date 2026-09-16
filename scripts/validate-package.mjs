@@ -104,14 +104,12 @@ for (const component of components) {
   const source = read(component.path);
   if (!source) continue;
 
-  const escapedId = component.id.replace(/[.*+?^$()|[\]\\]/g, "\\$&");
-  const escapedVersion = component.version.replace(/[.*+?^$()|[\]\\]/g, "\\$&");
   expect(
-    new RegExp(`Component ID:\\s*\\\\?`?${escapedId}\\\\?`?`).test(source),
+    source.includes("Component ID: \`" + component.id + "\`"),
     `Component ID header mismatch in ${component.path}`
   );
   expect(
-    new RegExp(`Version:\\s*\\\\?`?${escapedVersion}\\\\?`?`).test(source),
+    source.includes("Version: \`" + component.version + "\`"),
     `Component version header mismatch in ${component.path}`
   );
 }
@@ -138,7 +136,7 @@ for (const page of mappedPages) {
 
 const installer = read("install.md");
 const readme = read("README.md");
-expect(installer.includes(`Target release: \\`${manifest.version}\\``), "Installer target release mismatch");
+expect(installer.includes("Target release: `" + manifest.version + "`"), "Installer target release mismatch");
 expect(installer.includes(manifest.release_base_url), "Installer does not use manifest.release_base_url");
 expect(readme.includes(manifest.public_entrypoint), "README does not contain the public entrypoint");
 expect(readme.includes(`EMPIRA ${manifest.version}`), "README release version mismatch");
