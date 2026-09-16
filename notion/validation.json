@@ -1,0 +1,41 @@
+{
+  "validation_version": "1.0.0",
+  "checks": [
+    {
+      "id": "single-system-root",
+      "assertion": "Exactly one canonical page named EMPIRA System is selected for this installation."
+    },
+    {
+      "id": "memory-schema",
+      "assertion": "Memory contains every property, type, and option defined in notion/schema.json; Related targets the same Memory data source."
+    },
+    {
+      "id": "skills-schema",
+      "assertion": "AI Memory Skills contains every property and type defined in notion/schema.json."
+    },
+    {
+      "id": "components-present",
+      "assertion": "All components from manifest.json exist exactly once in their target databases."
+    },
+    {
+      "id": "component-versions",
+      "assertion": "Installed component IDs and versions match manifest.json and notion/system-pages.json."
+    },
+    {
+      "id": "component-content",
+      "assertion": "Installed system page bodies match their referenced canonical Markdown sources."
+    },
+    {
+      "id": "privacy-boundary",
+      "assertion": "No distributor personal records, credentials, workspace IDs, page IDs, relation IDs, or fictional example facts were installed as user Memory."
+    },
+    {
+      "id": "empty-user-memory",
+      "assertion": "A new installation contains no personal Memory objects beyond the two required system knowledge pages."
+    },
+    {
+      "id": "current-agent-access",
+      "assertion": "The current agent can find and read the canonical Guide, Schema, and three skills."
+    }
+  ]
+}
