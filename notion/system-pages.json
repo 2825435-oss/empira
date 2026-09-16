@@ -1,0 +1,72 @@
+{
+  "spec_version": "1.0.0",
+  "release": "0.1.0",
+  "pages": [
+    {
+      "component_id": "memory-system-guide",
+      "version": "1.2.0",
+      "source": "core/memory-system-guide.md",
+      "target_database": "memory",
+      "properties": {
+        "Name": "Memory System Guide — v1.2",
+        "Type": "Знання",
+        "Domain": [
+          "AI"
+        ],
+        "Summary": "Короткі стабільні правила роботи AI з Memory: що зберігати, як шукати, коли створювати або оновлювати записи, як узгоджувати зміни та не допускати суперечностей."
+      }
+    },
+    {
+      "component_id": "memory-schema-reference",
+      "version": "1.3.0",
+      "source": "core/memory-schema-reference.md",
+      "target_database": "memory",
+      "properties": {
+        "Name": "Memory Schema Reference — v1.3",
+        "Type": "Знання",
+        "Domain": [
+          "AI"
+        ],
+        "Summary": "Поточна схема бази Memory: типи об'єктів, домени, властивості, статуси та семантика їх використання. Версіонується незалежно від Memory System Guide."
+      }
+    },
+    {
+      "component_id": "prepare-for-memory",
+      "version": "1.0.0",
+      "source": "skills/prepare-for-memory.md",
+      "target_database": "ai-memory-skills",
+      "properties": {
+        "Skill name": "Prepare for Memory",
+        "Description": "Готує з поточного чату очищений handoff для подальшого внесення в Notion Memory. Не змінює Memory і не проєктує її структуру."
+      }
+    },
+    {
+      "component_id": "capture-to-memory",
+      "version": "1.0.0",
+      "source": "skills/capture-to-memory.md",
+      "target_database": "ai-memory-skills",
+      "properties": {
+        "Skill name": "Capture to Memory",
+        "Description": "Безпечно вносить підготовлений handoff або зміст поточного чату в Notion Memory згідно з актуальним Memory System Guide."
+      }
+    },
+    {
+      "component_id": "recall-from-memory",
+      "version": "1.0.0",
+      "source": "skills/recall-from-memory.md",
+      "target_database": "ai-memory-skills",
+      "properties": {
+        "Skill name": "Recall from Memory",
+        "Description": "Знаходить релевантний контекст у Notion Memory, розширює його через пов'язані об'єкти за потреби та синтезує відповідь із джерельними посиланнями без змін у Memory."
+      }
+    }
+  ],
+  "relations": [
+    {
+      "from": "memory-system-guide",
+      "property": "Related",
+      "to": "memory-schema-reference",
+      "symmetric": true
+    }
+  ]
+}
