@@ -1,0 +1,125 @@
+{
+  "schema_version": "1.0.0",
+  "databases": [
+    {
+      "id": "memory",
+      "name": "Memory",
+      "properties": [
+        {
+          "name": "Name",
+          "type": "title",
+          "required": true
+        },
+        {
+          "name": "Type",
+          "type": "select",
+          "options": [
+            "Проєкт",
+            "Людина",
+            "Річ",
+            "Знання",
+            "Рішення",
+            "Подія",
+            "Джерело",
+            "Організація",
+            "Процес",
+            "Завдання"
+          ]
+        },
+        {
+          "name": "Domain",
+          "type": "multi_select",
+          "options": [
+            "Робота",
+            "Особисте",
+            "Родина",
+            "Навчання",
+            "AI",
+            "Розробка",
+            "Соціальне"
+          ]
+        },
+        {
+          "name": "Status",
+          "type": "select",
+          "options": [
+            "Активний",
+            "Періодичний",
+            "Завершений",
+            "Архівний",
+            "Ідея",
+            "Призупинений",
+            "Актуальне",
+            "Замінене"
+          ]
+        },
+        {
+          "name": "Needs",
+          "type": "select",
+          "options": [
+            "До виконання",
+            "Потрібне моє рішення",
+            "Очікує зовнішнього",
+            "Завершено"
+          ]
+        },
+        {
+          "name": "Related",
+          "type": "relation",
+          "target": "self"
+        },
+        {
+          "name": "Date",
+          "type": "date"
+        },
+        {
+          "name": "Source URL",
+          "type": "url"
+        },
+        {
+          "name": "Summary",
+          "type": "rich_text"
+        },
+        {
+          "name": "Створено",
+          "type": "created_time",
+          "system_managed": true
+        },
+        {
+          "name": "Оновлено",
+          "type": "last_edited_time",
+          "system_managed": true
+        }
+      ]
+    },
+    {
+      "id": "ai-memory-skills",
+      "name": "AI Memory Skills",
+      "properties": [
+        {
+          "name": "Skill name",
+          "type": "title",
+          "required": true
+        },
+        {
+          "name": "Description",
+          "type": "rich_text"
+        },
+        {
+          "name": "Files",
+          "type": "files"
+        },
+        {
+          "name": "Tags",
+          "type": "multi_select",
+          "options": []
+        },
+        {
+          "name": "Created by",
+          "type": "created_by",
+          "system_managed": true
+        }
+      ]
+    }
+  ]
+}
