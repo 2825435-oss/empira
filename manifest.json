@@ -23,37 +23,43 @@
       "id": "memory-system-guide",
       "name": "Memory System Guide",
       "version": "1.2.0",
-      "path": "core/memory-system-guide.md"
+      "path": "core/memory-system-guide.md",
+      "deployment": "notion"
     },
     {
       "id": "memory-schema-reference",
       "name": "Memory Schema Reference",
       "version": "1.3.0",
-      "path": "core/memory-schema-reference.md"
+      "path": "core/memory-schema-reference.md",
+      "deployment": "notion"
     },
     {
       "id": "prepare-for-memory",
       "name": "Prepare for Memory",
       "version": "1.0.0",
-      "path": "skills/prepare-for-memory.md"
+      "path": "skills/prepare-for-memory.md",
+      "deployment": "notion"
     },
     {
       "id": "capture-to-memory",
       "name": "Capture to Memory",
       "version": "1.0.0",
-      "path": "skills/capture-to-memory.md"
+      "path": "skills/capture-to-memory.md",
+      "deployment": "notion"
     },
     {
       "id": "recall-from-memory",
       "name": "Recall from Memory",
       "version": "1.0.0",
-      "path": "skills/recall-from-memory.md"
+      "path": "skills/recall-from-memory.md",
+      "deployment": "notion"
     },
     {
       "id": "runtime-router",
       "name": "EMPIRA Runtime Router",
       "version": "1.0.0",
-      "path": "core/runtime-router.md"
+      "path": "core/runtime-router.md",
+      "deployment": "host"
     }
   ]
 }
