@@ -5,12 +5,17 @@ This document is an executable installation protocol for an AI agent. Follow it;
 ## Package
 
 - Product: EMPIRA
-- Target release: `0.2.0`
-- Manifest: https://raw.githubusercontent.com/2825435-oss/empira/main/manifest.json
-- Notion schema: https://raw.githubusercontent.com/2825435-oss/empira/main/notion/schema.json
-- System pages: https://raw.githubusercontent.com/2825435-oss/empira/main/notion/system-pages.json
-- Validation contract: https://raw.githubusercontent.com/2825435-oss/empira/main/notion/validation.json
-- Runtime router: https://raw.githubusercontent.com/2825435-oss/empira/main/core/runtime-router.md
+- Target release: `0.2.1`
+- Stable release ref: `release-0.2.1`
+- Release base: https://raw.githubusercontent.com/2825435-oss/empira/release-0.2.1/
+- Manifest: https://raw.githubusercontent.com/2825435-oss/empira/release-0.2.1/manifest.json
+- Changelog: https://raw.githubusercontent.com/2825435-oss/empira/release-0.2.1/CHANGELOG.md
+- Notion schema: https://raw.githubusercontent.com/2825435-oss/empira/release-0.2.1/notion/schema.json
+- System pages: https://raw.githubusercontent.com/2825435-oss/empira/release-0.2.1/notion/system-pages.json
+- Validation contract: https://raw.githubusercontent.com/2825435-oss/empira/release-0.2.1/notion/validation.json
+- Runtime router: https://raw.githubusercontent.com/2825435-oss/empira/release-0.2.1/core/runtime-router.md
+
+Resolve every relative component path in `manifest.json` against the release base above. Do not mix files from `main`, another release ref, a cached copy, or an installed version while reading this package.
 
 ## Goal
 
@@ -32,12 +37,13 @@ Do not ask the user to choose a platform, copy component prompts, edit JSON, or 
 5. Before any update that changes meaning, removes content, changes the Memory schema, or could invalidate existing records, show a concrete plan and obtain explicit approval.
 6. Authorization screens and connector permissions must be completed by the user through the host platform. Never request credentials in chat.
 7. If the current agent lacks required Notion read/write capabilities, report the exact missing capability and stop. Do not replace the Notion installation with a local imitation.
+8. Automated package validation is a structural safety check, not proof that natural-language files contain no personal context. Preserve the privacy boundary during semantic review and installation.
 
 ## Procedure
 
 ### 1. Read the package
 
-Read the manifest, schema, system-pages specification, validation contract, and every component listed by the manifest. Verify that their IDs and versions agree. If they do not agree, stop and report a package integrity error.
+Read the release manifest, schema, system-pages specification, validation contract, changelog, and every component listed by the manifest. Verify that their IDs and versions agree and that the manifest's release ref and release base match this package. If they do not agree, stop and report a package integrity error.
 
 ### 2. Inspect capabilities
 
@@ -77,7 +83,7 @@ Select the mode:
 For a new installation:
 
 1. Create a parent page named `EMPIRA System`.
-2. Record release `0.2.0`, installation date, and a clear privacy statement.
+2. Record release `0.2.1`, installation date, and a clear privacy statement.
 3. Create the `Memory` database exactly from `notion/schema.json`.
 4. Create the self-relation `Related` after the Memory data source exists.
 5. Create the `AI Memory Skills` database from `notion/schema.json`.
@@ -85,7 +91,7 @@ For a new installation:
 7. Place Guide and Schema in Memory with the properties specified in `system-pages.json`.
 8. Place Prepare, Capture, and Recall in AI Memory Skills with the properties specified in `system-pages.json`.
 9. Keep Memory free of personal or example records.
-10. Save installation metadata on `EMPIRA System`, including release and component versions.
+10. Save installation metadata on `EMPIRA System`, including release, stable release ref, and component versions.
 
 If the host's Notion tools cannot perform an exact required operation, do not silently approximate the schema. Report the unsupported operation.
 
@@ -102,8 +108,8 @@ If a complete current installation already exists:
 
 ### 6. Update or repair
 
-1. Compare installed versions against `manifest.json`.
-2. Inspect `CHANGELOG.md`.
+1. Compare installed versions against the release `manifest.json`.
+2. Inspect the release `CHANGELOG.md`.
 3. Produce a concise change plan.
 4. Preserve all user Memory records and installation-local Notion IDs.
 5. Apply only changes explicitly defined by the packaged release.
@@ -112,7 +118,7 @@ If a complete current installation already exists:
 
 ### 7. Host integration
 
-Read `core/runtime-router.md`.
+Read `core/runtime-router.md` from the stable release ref.
 
 Use native skills, plugins, project instructions, or equivalent host mechanisms when the current environment exposes a supported installation method.
 
@@ -126,7 +132,7 @@ If persistent host configuration cannot be installed programmatically:
 4. Offer the exact canonical block from `core/runtime-router.md` once, ready to paste without editing.
 5. Tell the user whether project-level or global placement is preferable for their stated use.
 6. Ask the user to make only this host-controlled settings change, then offer to validate it.
-7. If no persistent instruction mechanism exists, say that the same installer URL must be provided when connecting a new agent or session.
+7. If no persistent instruction mechanism exists, say that the same evergreen installer URL must be provided when connecting a new agent or session.
 
 Do not present this manual step as a failure, and do not ask the user to copy multiple prompts or component files.
 
@@ -139,7 +145,8 @@ Success requires:
 - one canonical EMPIRA System page;
 - one Memory database with the exact required schema;
 - one AI Memory Skills database;
-- all five components with matching IDs and versions;
+- all five Notion components with matching IDs and versions;
+- the packaged runtime router with the matching ID and version;
 - no distributor or fictional personal data;
 - working read access for the current agent.
 
@@ -149,8 +156,9 @@ Return only a concise installation report:
 
 - detected mode;
 - installed EMPIRA version;
+- stable release ref;
 - links to the EMPIRA System page and both databases;
 - component validation result;
-- persistent host integration status: installed automatically, manual one-block setup offered, or unavailable;
+- persistent host integration status: installed automatically, manual one-block setup offered, or unavailable.
 
 If manual persistent setup is needed, include the short explanation, exact location, and one copy-ready router block after the installation report. Do not return a long execution log.
