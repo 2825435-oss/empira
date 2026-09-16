@@ -12,6 +12,8 @@ Canonical installer file: [install.md](install.md)
 
 The same installer detects whether it must install, connect, update, or repair EMPIRA. It does not require the user to select ChatGPT, Claude, Codex, or copy separate component prompts.
 
+When a host cannot install persistent instructions programmatically, the installer explains the benefit briefly, identifies the exact host setting, and offers one canonical copy-ready router block. Authorization and host-controlled settings remain explicit user actions.
+
 The public raw URL will become usable after this clean repository is made public:
 
 ```text
@@ -20,7 +22,7 @@ https://raw.githubusercontent.com/2825435-oss/empira/main/install.md
 
 ## Release
 
-Current packaged baseline: **EMPIRA 0.1.0**.
+Current test release: **EMPIRA 0.2.0**.
 
 This is the first formally versioned distribution baseline. It does not attempt to reconstruct every internal revision that existed before packaging began.
 
@@ -37,6 +39,7 @@ This repository contains only reusable system components. It must not contain pe
 | Prepare for Memory | 1.0.0 | `skills/prepare-for-memory.md` |
 | Capture to Memory | 1.0.0 | `skills/capture-to-memory.md` |
 | Recall from Memory | 1.0.0 | `skills/recall-from-memory.md` |
+| EMPIRA Runtime Router | 1.0.0 | `core/runtime-router.md` |
 
 Machine-readable versions and installation resources are declared in `manifest.json`.
 
@@ -55,7 +58,7 @@ Only the first two layers are distributed.
 ```text
 install.md                 Universal agent entry point
 manifest.json              Release and component versions
-core/                      Canonical operating rules and schema semantics
+core/                      Canonical operating rules, schema semantics, and runtime router
 skills/                    Prepare, Capture, and Recall workflows
 notion/schema.json         Exact Notion database specification
 notion/system-pages.json   Component-to-Notion installation map
