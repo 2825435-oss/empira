@@ -15,15 +15,15 @@
     },
     {
       "id": "components-present",
-      "assertion": "All components from manifest.json exist exactly once in their target databases."
+      "assertion": "Every component mapped by notion/system-pages.json exists exactly once in its target Notion database. Host-deployed components are excluded."
     },
     {
       "id": "component-versions",
-      "assertion": "Installed component IDs and versions match manifest.json and notion/system-pages.json."
+      "assertion": "Installed Notion component IDs and versions match notion/system-pages.json; packaged host component versions match manifest.json."
     },
     {
       "id": "component-content",
-      "assertion": "Installed system page bodies match their referenced canonical Markdown sources."
+      "assertion": "Installed Notion page bodies match their canonical Markdown sources, and every host-deployed component file exists at the path declared in manifest.json."
     },
     {
       "id": "privacy-boundary",
@@ -36,6 +36,10 @@
     {
       "id": "current-agent-access",
       "assertion": "The current agent can find and read the canonical Guide, Schema, and three skills."
+    },
+    {
+      "id": "runtime-router",
+      "assertion": "The runtime-router component is deployed through a supported host mechanism or its one-block manual setup has been offered; it is not installed as a Memory record."
     }
   ]
 }
