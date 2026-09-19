@@ -1,6 +1,12 @@
 # EMPIRA
 
-EMPIRA is a portable, structured long-term memory system for people working with multiple AI agents. Notion stores each user's private Memory; this repository distributes the reusable system.
+![EMPIRA — shared memory for multiple AI agents](assets/empira-cover.jpeg)
+
+EMPIRA — це система спільної довгострокової пам’яті для людей, які працюють із кількома AI-агентами. Замість того щоб важливий контекст залишався всередині окремих чатів або конкретного AI-сервісу, EMPIRA зберігає структуровану Memory у Notion користувача. Завдяки цьому різні сумісні AI-агенти можуть працювати з одним джерелом довгострокового контексту та продовжувати роботу, спираючись на ті самі правила й дані.
+
+Система передається через одне постійне посилання на універсальний інсталятор. AI-агент читає пакет і залежно від стану системи визначає потрібний режим: встановити EMPIRA з нуля, підключитися до наявної інсталяції, оновити її або відновити неповну чи пошкоджену структуру. Персональна Memory при цьому не є частиною GitHub-репозиторію: там зберігаються лише правила, схема, робочі процеси та інші багаторазово використовувані компоненти системи. Особисті записи залишаються у власному Notion користувача.
+
+*EMPIRA is a portable, structured long-term memory system for people working with multiple AI agents. Notion stores each user's private Memory; this repository distributes the reusable system.*
 
 ## Universal entry point
 
