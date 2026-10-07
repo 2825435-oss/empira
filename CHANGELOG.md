@@ -2,6 +2,30 @@
 
 All notable packaged changes to EMPIRA are documented here.
 
+## 0.3.0 — Structured measurements and unresolved-question continuity
+
+### Added
+
+- `Показник` as a specialized Memory object type for structured measurements with long-term value.
+- `Здоров'я` as a composable domain for personal and family health context.
+- Structured health-measurement properties for glucose, glucose context, blood pressure, pulse, temperature, weight, SpO2, and measurement context.
+- Explicit guidance for retaining important unresolved questions without turning Memory into a general task manager.
+
+### Changed
+
+- Memory System Guide updated from 1.2.0 to 1.3.0.
+- Memory Schema Reference updated from 1.3.0 to 1.4.0.
+- Capture to Memory updated from 1.0.0 to 1.1.0 to reconcile unresolved questions during writes.
+- Recall from Memory updated from 1.0.0 to 1.1.0 to surface relevant unresolved questions during retrieval.
+- Notion schema specification updated from 1.0.0 to 1.1.0.
+
+### Compatibility and migration
+
+- The schema change is additive: existing Memory objects remain valid.
+- Updating an existing installation adds the new type, domain, select options, and measurement properties without deleting or rewriting user Memory.
+- Existing health knowledge remains ordinary Memory content unless the user explicitly chooses to create structured measurement records.
+- Prepare for Memory and EMPIRA Runtime Router remain 1.0.0.
+
 ## 0.2.1 — Distribution integrity hardening
 
 ### Added

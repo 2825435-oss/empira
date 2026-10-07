@@ -5,15 +5,15 @@ This document is an executable installation protocol for an AI agent. Follow it;
 ## Package
 
 - Product: EMPIRA
-- Target release: `0.2.1`
-- Stable release ref: `release-0.2.1`
-- Release base: https://raw.githubusercontent.com/2825435-oss/empira/release-0.2.1/
-- Manifest: https://raw.githubusercontent.com/2825435-oss/empira/release-0.2.1/manifest.json
-- Changelog: https://raw.githubusercontent.com/2825435-oss/empira/release-0.2.1/CHANGELOG.md
-- Notion schema: https://raw.githubusercontent.com/2825435-oss/empira/release-0.2.1/notion/schema.json
-- System pages: https://raw.githubusercontent.com/2825435-oss/empira/release-0.2.1/notion/system-pages.json
-- Validation contract: https://raw.githubusercontent.com/2825435-oss/empira/release-0.2.1/notion/validation.json
-- Runtime router: https://raw.githubusercontent.com/2825435-oss/empira/release-0.2.1/core/runtime-router.md
+- Target release: `0.3.0`
+- Stable release ref: `release-0.3.0`
+- Release base: https://raw.githubusercontent.com/2825435-oss/empira/release-0.3.0/
+- Manifest: https://raw.githubusercontent.com/2825435-oss/empira/release-0.3.0/manifest.json
+- Changelog: https://raw.githubusercontent.com/2825435-oss/empira/release-0.3.0/CHANGELOG.md
+- Notion schema: https://raw.githubusercontent.com/2825435-oss/empira/release-0.3.0/notion/schema.json
+- System pages: https://raw.githubusercontent.com/2825435-oss/empira/release-0.3.0/notion/system-pages.json
+- Validation contract: https://raw.githubusercontent.com/2825435-oss/empira/release-0.3.0/notion/validation.json
+- Runtime router: https://raw.githubusercontent.com/2825435-oss/empira/release-0.3.0/core/runtime-router.md
 
 Resolve every relative component path in `manifest.json` against the release base above. Do not mix files from `main`, another release ref, a cached copy, or an installed version while reading this package.
 
@@ -83,7 +83,7 @@ Select the mode:
 For a new installation:
 
 1. Create a parent page named `EMPIRA System`.
-2. Record release `0.2.1`, installation date, and a clear privacy statement.
+2. Record release `0.3.0`, installation date, and a clear privacy statement.
 3. Create the `Memory` database exactly from `notion/schema.json`.
 4. Create the self-relation `Related` after the Memory data source exists.
 5. Create the `AI Memory Skills` database from `notion/schema.json`.

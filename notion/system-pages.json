@@ -1,14 +1,14 @@
 {
   "spec_version": "1.0.0",
-  "release": "0.2.1",
+  "release": "0.3.0",
   "pages": [
     {
       "component_id": "memory-system-guide",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "source": "core/memory-system-guide.md",
       "target_database": "memory",
       "properties": {
-        "Name": "Memory System Guide — v1.2",
+        "Name": "Memory System Guide — v1.3",
         "Type": "Знання",
         "Domain": [
           "AI"
@@ -18,11 +18,11 @@
     },
     {
       "component_id": "memory-schema-reference",
-      "version": "1.3.0",
+      "version": "1.4.0",
       "source": "core/memory-schema-reference.md",
       "target_database": "memory",
       "properties": {
-        "Name": "Memory Schema Reference — v1.3",
+        "Name": "Memory Schema Reference — v1.4",
         "Type": "Знання",
         "Domain": [
           "AI"
@@ -42,7 +42,7 @@
     },
     {
       "component_id": "capture-to-memory",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "source": "skills/capture-to-memory.md",
       "target_database": "ai-memory-skills",
       "properties": {
@@ -52,7 +52,7 @@
     },
     {
       "component_id": "recall-from-memory",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "source": "skills/recall-from-memory.md",
       "target_database": "ai-memory-skills",
       "properties": {

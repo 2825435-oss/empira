@@ -23,9 +23,9 @@ When a host cannot install persistent instructions programmatically, the install
 
 ## Release
 
-Current test release: **EMPIRA 0.2.1**.
+Current test release: **EMPIRA 0.3.0**.
 
-This is a packaging and distribution hardening release. EMPIRA 0.1.0 remains the first formally versioned distribution baseline.
+This release adds structured time-series measurements, the Health domain, and updated handling of unresolved questions. EMPIRA 0.1.0 remains the first formally versioned distribution baseline.
 
 ## Language
 
@@ -41,11 +41,11 @@ Automated validation checks package structure and common secret or installation-
 
 | Component | Version | Path |
 |---|---:|---|
-| Memory System Guide | 1.2.0 | `core/memory-system-guide.md` |
-| Memory Schema Reference | 1.3.0 | `core/memory-schema-reference.md` |
+| Memory System Guide | 1.3.0 | `core/memory-system-guide.md` |
+| Memory Schema Reference | 1.4.0 | `core/memory-schema-reference.md` |
 | Prepare for Memory | 1.0.0 | `skills/prepare-for-memory.md` |
-| Capture to Memory | 1.0.0 | `skills/capture-to-memory.md` |
-| Recall from Memory | 1.0.0 | `skills/recall-from-memory.md` |
+| Capture to Memory | 1.1.0 | `skills/capture-to-memory.md` |
+| Recall from Memory | 1.1.0 | `skills/recall-from-memory.md` |
 | EMPIRA Runtime Router | 1.0.0 | `core/runtime-router.md` |
 
 Machine-readable versions and installation resources are declared in `manifest.json`.
